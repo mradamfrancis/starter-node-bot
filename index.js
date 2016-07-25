@@ -38,6 +38,10 @@ controller.hears(['send flowers'], ['direct_mention'], function (bot, message) {
   bot.reply(message, 'give me an address first.')
 })
 
+controller.hears(['* road'], ['direct_mention'], function (bot, message) {
+  bot.reply(message, 'great, which number')
+})
+
 controller.hears(['hello', 'hi'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Hello.')
   bot.reply(message, 'It\'s nice to talk to you directly.')
