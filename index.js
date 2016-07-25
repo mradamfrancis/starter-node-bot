@@ -35,12 +35,15 @@ controller.hears(['hello', 'hi'], ['direct_mention'], function (bot, message) {
 })
 
 controller.hears(['send flowers'], ['direct_mention'], function (bot, message) {
-  bot.reply(message, 'give me an address first.')
+  //bot.reply(message, 'give me an address first.')
+  bot.startPrivateConversation(message,function(err,convo) {
+
+    convo.say('Hello!');
+    convo.say('Have a nice day!');
+
+  });
 })
 
-controller.hears(['* road'], ['direct_mention'], function (bot, message) {
-  bot.reply(message, 'great, which number')
-})
 
 controller.hears(['hello', 'hi'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Hello.')
