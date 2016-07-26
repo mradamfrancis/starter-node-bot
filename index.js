@@ -57,7 +57,7 @@ controller.hears(['question me'], 'direct_mention', function(bot,message) {
 
 })
 
-controller.hears(['flowertime'], 'direct_mention', function(bot,message) {
+/*controller.hears(['flowertime'], 'direct_mention', function(bot,message) {
     askFlavor = function(response, convo) {
       convo.ask('What flower do you want? Zara, Charlie or Willow', function(response, convo) {
         convo.say('Awesome.');
@@ -80,28 +80,28 @@ controller.hears(['flowertime'], 'direct_mention', function(bot,message) {
     }
 
     bot.startConversation(message, askFlavor);
-})
+})*/
 
-controller.hears(['pizzatime'],['ambient'],function(bot,message) {
+controller.hears(['flowertime'],['ambient'],function(bot,message) {
   bot.startConversation(message, askPizzaFlavor);
 });
 
 askPizzaFlavor = function(response, convo) {
-  convo.ask("What flavor of pizza do you want?", function(response, convo) {
+  convo.ask("What flower do you want? Zara, Charlie or Willow", function(response, convo) {
     convo.say("Awesome.");
     askPizzaSize(response, convo);
     convo.next();
   });
 }
 askPizzaSize = function(response, convo) {
-  convo.ask("What size do you want?", function(response, convo) {
+  convo.ask("What address?", function(response, convo) {
     convo.say("Ok.")
     askPizzaWhereDeliver(response, convo);
     convo.next();
   });
 }
 askPizzaWhereDeliver = function(response, convo) { 
-  convo.ask("So where do you want it delivered?", function(response, convo) {
+  convo.ask("When do you want? Now, Tomorrow or other", function(response, convo) {
     convo.say("Ok! Goodbye.");
     convo.next();
   });
