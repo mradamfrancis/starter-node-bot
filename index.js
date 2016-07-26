@@ -99,7 +99,7 @@ controller.hears(['apitime'],['ambient'], function(bot, message) {
 			for(i = 0;i<skus.length;i++)
 			{
 				//bot.reply(message, 'name: ' + skus[i].attributes.name);
-				bot.repl(message, 'type: ' + skus[i].type + '. ID: ' + skus[i].ID);
+				bot.reply(message, 'type: ' + skus[i].type + '. ID: ' + skus[i].id);
 			}
 		})
 	})
