@@ -85,3 +85,28 @@ controller.hears(['attachment'], ['direct_message', 'direct_mention'], function 
 controller.hears('.*', ['direct_message', 'direct_mention'], function (bot, message) {
   bot.reply(message, 'Sorry <@' + message.user + '>, I don\'t understand. \n')
 })
+
+controller.hears(['flowertime'], 'message_received', function(bot,message) {
+    askFlavor = function(response, convo) {
+      convo.ask('What flower do you want? Zara, Charlie or Willow', function(response, convo) {
+        convo.say('Awesome.');
+        askSize(response, convo);
+        convo.next();
+      });
+    }
+    askSize = function(response, convo) {
+      convo.ask('What address?', function(response, convo) {
+        convo.say('Ok.')
+        askWhereDeliver(response, convo);
+        convo.next();
+      });
+    }
+    askWhereDeliver = function(response, convo) {
+      convo.ask('When do you want? Now, Tomorrow or other', function(response, convo) {
+        convo.say('Ok! Good bye.');
+        convo.next();
+      });
+    }
+
+    bot.startConversation(message, askFlavor);
+});
