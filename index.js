@@ -1,5 +1,5 @@
 var Botkit = require('botkit')
-
+var http = require('http')
 var token = process.env.SLACK_TOKEN
 
 var controller = Botkit.slackbot({
@@ -34,7 +34,7 @@ controller.hears(['hello', 'hi'], ['direct_mention'], function (bot, message) {
   bot.reply(message, 'Hello.')
 })
 
-controller.hears(['send flowers'], ['direct_mention'], function (bot, message) {
+/*controller.hears(['send flowers'], ['direct_mention'], function (bot, message) {
   //bot.reply(message, 'give me an address first.')
   bot.startConversation(message,function(err,convo) {
 
@@ -42,9 +42,9 @@ controller.hears(['send flowers'], ['direct_mention'], function (bot, message) {
     convo.say('Have a nice day!');
 
   });
-})
+})*/
 
-controller.hears(['question me'], 'direct_mention', function(bot,message) {
+/*controller.hears(['question me'], 'direct_mention', function(bot,message) {
   // start a conversation to handle this response.
   bot.startConversation(message,function(err,convo) {
     convo.ask('How are you?',function(response,convo) {
@@ -55,7 +55,7 @@ controller.hears(['question me'], 'direct_mention', function(bot,message) {
 
   })
 
-})
+})*/
 
 /*controller.hears(['flowertime'], 'direct_mention', function(bot,message) {
     askFlavor = function(response, convo) {
@@ -81,6 +81,29 @@ controller.hears(['question me'], 'direct_mention', function(bot,message) {
 
     bot.startConversation(message, askFlavor);
 })*/
+
+controller.hears(['apitime'],['ambient'], function(bot, message)
+var url = '/v2/skus?filter[active]=true&include=collection,default_bouquet,default_bouquet.bouquet_images'
+http.get({
+		host: 'api.bloomandwild.com',
+		path: url
+	}, function(response){
+		var body = '';
+		response.on('data',function(d){
+			body += d;
+		})
+		response.on('end', function(){
+			var data = JSON.parse(body);
+			var skus = data;
+			//var days = data.forecast.simpleforecast.forecastday;
+			for(i = 0;i<skus.length;i++)
+			{
+				//bot.reply(message, 'name: ' + skus[i].attributes.name);
+				bot.repl(message, 'type: ' + skus[i].type + '. ID: ' + skus[i].ID);
+			}
+		})
+	})
+)
 
 controller.hears(['flowertime'],['ambient'],function(bot,message) {
   bot.startConversation(message, askPizzaFlavor);
