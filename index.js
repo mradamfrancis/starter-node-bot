@@ -82,9 +82,9 @@ controller.hears(['hello', 'hi'], ['direct_mention'], function (bot, message) {
     bot.startConversation(message, askFlavor);
 })*/
 
-controller.hears(['apitime'],['ambient'], function(bot, message)
-var url = '/v2/skus?filter[active]=true&include=collection,default_bouquet,default_bouquet.bouquet_images'
-http.get({
+controller.hears(['apitime'],['ambient'], function(bot, message) {
+  var url = '/v2/skus?filter[active]=true&include=collection,default_bouquet,default_bouquet.bouquet_images'
+  http.get({
 		host: 'api.bloomandwild.com',
 		path: url
 	}, function(response){
@@ -103,7 +103,7 @@ http.get({
 			}
 		})
 	})
-)
+)};
 
 controller.hears(['flowertime'],['ambient'],function(bot,message) {
   bot.startConversation(message, askPizzaFlavor);
