@@ -82,6 +82,31 @@ controller.hears(['flowertime'], 'direct_mention', function(bot,message) {
     bot.startConversation(message, askFlavor);
 })
 
+controller.hears(['pizzatime'],['ambient'],function(bot,message) {
+  bot.startConversation(message, askPizzaFlavor);
+});
+
+askPizzaFlavor = function(response, convo) {
+  convo.ask("What flavor of pizza do you want?", function(response, convo) {
+    convo.say("Awesome.");
+    askPizzaSize(response, convo);
+    convo.next();
+  });
+}
+askPizzaSize = function(response, convo) {
+  convo.ask("What size do you want?", function(response, convo) {
+    convo.say("Ok.")
+    askPizzaWhereDeliver(response, convo);
+    convo.next();
+  });
+}
+askPizzaWhereDeliver = function(response, convo) { 
+  convo.ask("So where do you want it delivered?", function(response, convo) {
+    convo.say("Ok! Goodbye.");
+    convo.next();
+  });
+}
+
 controller.hears(['hello', 'hi'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Hello.')
   bot.reply(message, 'It\'s nice to talk to you directly.')
