@@ -57,7 +57,7 @@ controller.hears(['question me'], 'direct_mention', function(bot,message) {
 
 })
 
-controller.hears(['flowertime'], 'message_received', function(bot,message) {
+controller.hears(['flowertime'], 'direct_mention', function(bot,message) {
     askFlavor = function(response, convo) {
       convo.ask('What flower do you want? Zara, Charlie or Willow', function(response, convo) {
         convo.say('Awesome.');
