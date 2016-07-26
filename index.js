@@ -111,7 +111,7 @@ controller.hears(['flowertime'],['ambient'],function(bot,message) {
 
 askPizzaFlavor = function(response, convo) {
   convo.ask("What flower do you want? Zara, Charlie or Willow", function(response, convo) {
-    convo.say("Awesome.");
+    convo.say('Awesome. ' + response.text + ' it is then');
     askPizzaSize(response, convo);
     convo.next();
   });
