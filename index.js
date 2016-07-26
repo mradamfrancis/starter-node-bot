@@ -148,15 +148,12 @@ controller.hears('help', ['direct_message', 'direct_mention'], function (bot, me
   bot.reply(message, help)
 })
 
-controller.hears(['attachment'], ['direct_message', 'direct_mention'], function (bot, message) {
-  var text = 'Beep Beep Boop is a ridiculously simple hosting platform for your Slackbots.'
+controller.hears([':bouquet:'], ['direct_message', 'direct_mention'], function (bot, message) {
+  var text = 'no image, oh well.'
   var attachments = [{
     fallback: text,
-    pretext: 'We bring bots to life. :sunglasses: :thumbsup:',
-    title: 'Host, deploy and share your bot in seconds.',
-    image_url: 'https://storage.googleapis.com/beepboophq/_assets/bot-1.22f6fb.png',
-    title_link: 'https://beepboophq.com/',
-    text: text,
+    image_url: 'http://bw-site-images-processed-staging.s3.amazonaws.com/letterbox-main/3-months-of-flowers/website_small/8b99fdd71721c30ced2a7e022d6fc088.jpg',
+    title_link: 'https://bloomandwild.com/',
     color: '#7CD197'
   }]
 
