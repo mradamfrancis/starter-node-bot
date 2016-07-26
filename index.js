@@ -34,6 +34,10 @@ controller.hears(['hello', 'hi'], ['direct_mention'], function (bot, message) {
   bot.reply(message, 'Hello.')
 })
 
+controller.on('message_received', function(bot, message) {
+    bot.reply(message, 'I heard... something!');
+});
+
 controller.hears(['send flowers'], ['direct_mention'], function (bot, message) {
   //bot.reply(message, 'give me an address first.')
   bot.startConversation(message,function(err,convo) {
