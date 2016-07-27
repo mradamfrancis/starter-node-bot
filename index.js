@@ -441,10 +441,10 @@ q03 = function(response, convo) {
 convo.ask(" What’s the occasion? A) Business:briefcase: B) Personal :cat:", function(response, convo) {
     if (response.text.toUpperCase() == 'A') {
         convo.say("No problem!")
-        q04(response, convo);
+        q05(response, convo);
     } else if (response.text.toUpperCase() == 'B') {
         convo.say("Great!")
-        q05(response, convo);
+        q04(response, convo);
 }
 convo.next();
 });
