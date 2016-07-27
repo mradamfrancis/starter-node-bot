@@ -106,7 +106,7 @@ controller.hears(['hello', 'hi'], ['direct_mention'], function (bot, message) {
 )};*/
 
 controller.hears(['adam'],['ambient'],function(bot,message) {
-  bot.startConversation(message, q08, bot);
+  bot.startConversation(message, q08);
 });
 
 q08 = function(response, convo, bot) {
