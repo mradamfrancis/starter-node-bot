@@ -336,7 +336,7 @@ convo.ask("When do you want this delivered? A) ASAP B) 2-4pm C) 3-5pm D) 4-6pm",
 }
 
 q17 = function(response, convo) {
-convo.ask("Have we got that right? 535 Kings Road, SW10 0SZ, London :octocat:”, function(response, convo) {
+convo.ask("Have we got that right? 535 Kings Road, SW10 0SZ, London :octocat:", function(response, convo) {
 
        convo.say(“Great :smile_cat:”)
        q27(response, convo);
@@ -346,7 +346,7 @@ convo.next();
 }
 
 q15 = function(response, convo) {
-convo.ask("What’s the postcode please ? :angel: ”, function(response, convo) {
+convo.ask("What’s the postcode please ? :angel: ", function(response, convo) {
     
         convo.say(“Thanks:+1:”)
         q16(response, convo);
@@ -369,7 +369,7 @@ convo.ask("Are you happy with our selection?", function(response, convo) {
        convo.say('Excellent :heart_eyes_cat: ');
        q15(response, convo);
  } else  if (response.text.toUpperCase() == 'NO') {
-       convo.say(':crying_cat_face:  O dear, let's try something else :new_moon_with_face:')
+       convo.say(":crying_cat_face:  O dear, let's try something else :new_moon_with_face:")
        q14(response, convo)
 
  } else {
