@@ -109,7 +109,7 @@ controller.hears(['adam'],['ambient'],function(bot,message) {
   bot.startConversation(message, q08);
 });
 
-q08 = function(response, convo, bot) {
+q08 = function(response, convo) {
 convo.say("We have chosen the Harper")
 var attachments = [{
     fallback: 'text',
