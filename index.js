@@ -304,7 +304,7 @@ convo.ask("Type 'YES' to approve your order.", function(response, convo) {
 }
 
 q19 = function(response, convo) {
-convo.ask(“Use your card ending XX339?:money_mouth_face:", function(response, convo) {
+convo.ask(“Use your card ending XX339. :money_mouth_face:", function(response, convo) {
     
         convo.say(“Brill:nerd_face:”)
         q20(response, convo);
