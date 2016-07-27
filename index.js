@@ -430,7 +430,7 @@ convo.ask("Would you like us to choose the bouquet for you? :bouquet: Type 'YES'
         convo.say('Awesome.');
         q08(response, convo);
     } else {
-        convo.say('Soz, please say type 'YES' for demo. :middle_finger: ')
+        convo.say("Soz, please say type 'YES' for demo. :middle_finger: ")
         q05(response, convo)
     }
   convo.next();
