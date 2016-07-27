@@ -122,7 +122,7 @@ var msg = {
       attachment: attachments
       }
     
-    controller.bot.reply(msg);
+    controller.reply(msg);
     convo.ask("Do you want flowers delivered today?", function(response, convo) {
         if (response.text.uppercase == 'NO') {
             convo.say("This bot is not for you. Click HERE")
