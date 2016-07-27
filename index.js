@@ -113,8 +113,10 @@ split01 = function(response, convo) {
   convo.ask("What flower do you want? Zara, Charlie or Willow", function(response, convo) {
   	if (response.text == 'Zara') {
   		convo.say('Zara!!');
+  		askPizzaSize(response, convo);
   	} else {
   		convo.say('please say something else')
+  		askPizzaWhereDeliver(response, convo)
   	}
     convo.next();
   });
@@ -178,6 +180,32 @@ controller.hears([':bouquet:'], ['direct_message', 'direct_mention'], function (
     console.log(err, resp)
   })
 })
+
+/*controller.hears(['adam2'], ['direct_message', 'direct_mention'], function (bot, message) {
+  var text = 'no image, oh well.'
+  var attachments = [{
+    fallback: text,
+    text: 'Pick a button',
+    color: '#7CD197',
+    actions: [{
+    	name: 'A',
+    	text: 'A-text',
+    	type: 'button',
+    	value: 'A-value'
+    	}, {
+    	name: 'B',
+    	text: 'B-text',
+    	type: 'button',
+    	value: 'B-value'
+    	}]
+  }]
+
+  bot.reply(message, {
+    attachments: attachments
+  }, function (err, resp) {
+    console.log(err, resp)
+  })
+})*/
 
 controller.hears('.*', ['direct_message', 'direct_mention'], function (bot, message) {
   bot.reply(message, 'Sorry <@' + message.user + '>, I don\'t understand. \n')
