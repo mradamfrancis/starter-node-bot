@@ -123,7 +123,7 @@ var msg = {
       attachment: attachments
       }
     
-    bot2.reply(message, msg);
+    bot2.reply(convo, msg);
     convo.ask("Do you want flowers delivered today?", function(response, convo) {
         if (response.text.uppercase == 'NO') {
             convo.say("This bot is not for you. Click HERE")
