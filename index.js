@@ -106,8 +106,33 @@ controller.hears(['hello', 'hi'], ['direct_mention'], function (bot, message) {
 )};*/
 
 controller.hears(['adam'],['ambient'],function(bot,message) {
-  bot.startConversation(message, split01);
+  bot.startConversation(message, q08);
 });
+
+q08 = function(response, convo) {
+convo.say("We have chosen the Harper")
+var attachments = [{
+    fallback: text,
+    image_url: 'http://bw-site-images-processed-staging.s3.amazonaws.com/letterbox-main/3-months-of-flowers/website_small/8b99fdd71721c30ced2a7e022d6fc088.jpg',
+    title_link: 'https://bloomandwild.com/',
+    color: '#7CD197'
+  }]
+var msg = {
+      attachment: attachments
+      }
+    
+    convo.say(msg);
+    convo.ask("Do you want flowers delivered today?", function(response, convo) {
+        if (response.text.uppercase == 'NO') {
+            convo.say("This bot is not for you. Click HERE")
+           
+      } else {
+            convo.say("Great! I was hoping you would say that")
+            q02(response, convo)
+        }
+      convo.next();
+    });
+}
 
 split01 = function(response, convo) {
   convo.ask("What flower do you want? Zara, Charlie or Willow", function(response, convo) {
