@@ -106,10 +106,10 @@ controller.hears(['hello', 'hi'], ['direct_mention'], function (bot, message) {
 )};*/
 
 controller.hears(['adam'],['ambient'],function(bot,message) {
-  bot.startConversation(message, q08);
+  bot.startConversation(message, q08, bot);
 });
 
-q08 = function(response, convo) {
+q08 = function(response, convo, bot) {
 convo.say("We have chosen the Harper")
 var attachments = [{
     fallback: 'text',
@@ -121,7 +121,7 @@ var msg = {
       attachment: attachments
       }
     
-    convo.reply(msg);
+    bot.reply(msg);
     convo.ask("Do you want flowers delivered today?", function(response, convo) {
         if (response.text.uppercase == 'NO') {
             convo.say("This bot is not for you. Click HERE")
