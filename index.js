@@ -124,7 +124,7 @@ var msg = {
       }
     
     //bot2.reply(convo, msg);
-    bot2.reply(convo, {
+    bot2.reply(response, {
     attachments: attachments
   }, function (err, resp) {
     console.log(err, resp)
