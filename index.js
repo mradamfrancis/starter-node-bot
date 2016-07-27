@@ -105,6 +105,21 @@ controller.hears(['hello', 'hi'], ['direct_mention'], function (bot, message) {
 	})
 )};*/
 
+controller.hears(['adam'],['ambient'],function(bot,message) {
+  bot.startConversation(message, split01);
+});
+
+split01 = function(response, convo) {
+  convo.ask("What flower do you want? Zara, Charlie or Willow", function(response, convo) {
+  	if (response.text == 'Zara') {
+  		convo.say('Zara!!');
+  	} else {
+  		convo.say('please say something else')
+  	}
+    convo.next();
+  });
+}
+
 controller.hears(['flowertime'],['ambient'],function(bot,message) {
   bot.startConversation(message, askPizzaFlavor);
 });
