@@ -338,7 +338,7 @@ convo.ask("When do you want this delivered? A) ASAP B) 2-4pm C) 3-5pm D) 4-6pm",
 q17 = function(response, convo) {
 convo.ask("Have we got that right? 535 Kings Road, SW10 0SZ, London :octocat:", function(response, convo) {
 
-       convo.say(“Great :smile_cat:”)
+       convo.say("Great :smile_cat:")
        q27(response, convo);
 
 convo.next();
@@ -348,7 +348,7 @@ convo.next();
 q15 = function(response, convo) {
 convo.ask("What’s the postcode please ? :angel: ", function(response, convo) {
     
-        convo.say(“Thanks:+1:”)
+        convo.say("Thanks:+1:")
         q16(response, convo);
 
 convo.next();
