@@ -401,11 +401,11 @@ convo.ask("Are you happy with our selection?", function(response, convo) {
 q11 = function(response, convo) {
 convo.ask("Which of these statements best decribes the recipient? A) Bright & fun, B) Summery, light & carefree, C) Traditional & classic or D):pineapple: :pineapple: :pineapple: :pineapple: :pineapple: - type 'A', 'B', 'C' or 'D' to answer.", function(response, convo) {
    if (response.text.toUpperCase() == 'A') {
-       convo.say('SWEET BRO. We've selected The Zara for you');
+       convo.say("SWEET BRO. We've selected The Zara for you");
        q13(response, convo);
  } else
     if (response.text.toUpperCase() == 'B') {
-       convo.say('Not much of a summer tho is it. Good choice, we've selected The Charlie for you')
+       convo.say("Not much of a summer tho is it. Good choice, we've selected The Charlie for you")
        q13(response, convo)
 } else 
  if (response.text.toUpperCase() == 'C') {
@@ -530,7 +530,7 @@ convo.ask("Are you happy to continue your order ", function(response, convo) {
 q12 = function(response, convo) {
 convo.ask("What best describes your recipient? A) Quirky & crafty B) Stylish & elegant C) A little bit special", function(response, convo) {
     if (response.text.toUpperCase() == 'A') {
-        convo.say('Awesome. We've selected The Posy Party');
+        convo.say("Awesome. We've selected The Posy Party");
         q25(response, convo);
     } else if (response.text.toUpperCase() == 'B') {
         convo.say('Awesome. We've selected The Willow');
@@ -547,7 +547,7 @@ convo.ask("What best describes your recipient? A) Quirky & crafty B) Stylish & e
 }
 
 q24 = function(response, convo) {
-convo.say('Awesome. We've selected The Willow');
+convo.say("Awesome. We've selected The Willow");
 convo.next();
 }
 
