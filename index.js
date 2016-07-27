@@ -539,7 +539,7 @@ convo.ask("What best describes your recipient? A) Quirky & crafty B) Stylish & e
         convo.say("Awesome. We've selected The Jessica");
         q25(response, convo);
     } else {
-        convo.say('Please type 'A','B','C'.')
+        convo.say("Please type 'A','B','C'.")
         q12(response, convo)
     }
   convo.next();
