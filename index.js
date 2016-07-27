@@ -210,15 +210,15 @@ convo.ask("Which of these statements best decribes the recipient? A) Bright & fu
   if (response.text.toUpperCase() == 'A') {
       convo.say("SWEET BRO. We've selected The Zara for you");
       q13(response, convo);
-      }
+      } else 
    if (response.text.toUpperCase() == 'B') {
       convo.say("Not much of a summer tho is it. Good choice, we've selected The Charlie for you")
       q13(response, convo)
-      }
+      } else
 if (response.text.toUpperCase() == 'C') {
       convo.say('If the Queen was a customer, she would select The Esme ')
       q13(response, convo)
-      }
+      } else
 if (response.text.toUpperCase() == 'D') {
       convo.say(':pineapple: PINEAPPLEZZZZZZZZZZ :pineapple:')
       q13(response, convo)
