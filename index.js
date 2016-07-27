@@ -533,7 +533,7 @@ convo.ask("What best describes your recipient? A) Quirky & crafty B) Stylish & e
         convo.say("Awesome. We've selected The Posy Party");
         q25(response, convo);
     } else if (response.text.toUpperCase() == 'B') {
-        convo.say('Awesome. We've selected The Willow');
+        convo.say("Awesome. We've selected The Willow");
         q25(response, convo);
     } else if (response.text.toUpperCase() == 'C') {
         convo.say("Awesome. We've selected The Jessica");
