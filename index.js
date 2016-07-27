@@ -11,7 +11,8 @@ var controller = Botkit.slackbot({
 // Assume single team mode if we have a SLACK_TOKEN
 if (token) {
   console.log('Starting in single-team mode')
-  controller.spawn({
+  var bot2 = controller.spawn({
+  //controller.spawn({
     token: token
   }).startRTM(function (err, bot, payload) {
     if (err) {
@@ -122,7 +123,7 @@ var msg = {
       attachment: attachments
       }
     
-    controller.reply(msg);
+    bot2.reply(msg);
     convo.ask("Do you want flowers delivered today?", function(response, convo) {
         if (response.text.uppercase == 'NO') {
             convo.say("This bot is not for you. Click HERE")
