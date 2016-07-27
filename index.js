@@ -387,7 +387,7 @@ convo.ask("Are you happy with our selection?", function(response, convo) {
        q15(response, convo);
  } else
     if (response.text.toUpperCase() == 'NO') {
-       convo.say(':crying_cat_face:  O dear, let's try something else :new_moon_with_face:')
+       convo.say(":crying_cat_face:  O dear, let's try something else :new_moon_with_face:")
        q14(response, convo)
 
  } else {
