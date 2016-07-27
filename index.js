@@ -556,7 +556,7 @@ convo.ask("Would you like us to select a bouquet for you? Type 'YES' or 'NO'.", 
     if (response.text.toUpperCase() == 'YES') {
         convo.say('Woohoo! Coming up...');
         q07(response, convo);
-    } else if (response.text.uppercase == 'NO') {
+    } else if (response.text.toUpperCase() == 'NO') {
         convo.say('Rightio...');
         q06(response, convo);
     } else {
