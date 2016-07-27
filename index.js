@@ -112,7 +112,7 @@ controller.hears(['adam'],['ambient'],function(bot,message) {
 q08 = function(response, convo) {
 convo.say("We have chosen the Harper")
 var attachments = [{
-    fallback: text,
+    fallback: 'text',
     image_url: 'http://bw-site-images-processed-staging.s3.amazonaws.com/letterbox-main/3-months-of-flowers/website_small/8b99fdd71721c30ced2a7e022d6fc088.jpg',
     title_link: 'https://bloomandwild.com/',
     color: '#7CD197'
