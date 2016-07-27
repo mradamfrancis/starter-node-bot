@@ -193,7 +193,7 @@ convo.ask("OK ok ok chill out. What colour range would you prefer? A) Bright & c
   if (response.text.toUpperCase() == 'A') {
       convo.say("You're so wild. Good choice");
       q11(response, convo);
-      }
+      } else
    if (response.text.toUpperCase() == 'B') {
       convo.say('Sophisticated eh? ')
       q12(response, convo)
